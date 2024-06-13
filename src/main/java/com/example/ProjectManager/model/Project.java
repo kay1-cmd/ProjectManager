@@ -1,3 +1,5 @@
+package com.example.ProjectManager.model;
+
 public class Project {
     
     private String name;
