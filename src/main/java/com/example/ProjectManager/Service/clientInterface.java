@@ -7,7 +7,7 @@ public interface clientInterface {
 
     Client createClient(Client client);
     Client getClient();
-    Project createProject();
-    Project getProject();
+    CLient createProject();
+    Client getProject();
 
 }

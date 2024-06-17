@@ -3,6 +3,7 @@ package com.example.ProjectManager.model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import java.util.*;
 
 @Getter
 @Setter
@@ -14,7 +15,7 @@ public class Client {
     private String clientName;
     private String clientEmail;
     private String clientNumber;
-    private Project project;
+    private Map<String, Project> projectList;
 
     public void setID(String ID){
         this.clientID = ID;
@@ -58,13 +59,16 @@ public class Client {
 
     /*  Creates a new project object. 
         Collects project name, uses to create a new project and fills
-        name field in Project onject with String n
+        name field in Project onject with String n.
+        Adds it to list of projects for this client.
     */
-    public void createNewProject(String n){
-        this.project = new Project(n);
+    public void createNewProject(String projectName){
+        Project projectObject = new Project(projectName);
+        projectList.put(projectName, projectObject);
+
     }
-    public Project getProject(){
-        return this.project;
+    public Project getProject(String retrievalName){
+        return projectList.get(retrievalName);
      }
 
 
