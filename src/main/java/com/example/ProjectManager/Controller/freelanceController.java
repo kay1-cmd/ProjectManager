@@ -20,7 +20,7 @@ public class freelanceController {
         this.clientService = clientService;
     }
 
-    //Example of Post call for API to create a client
+    //Post API Call to create a client
     @PostMapping("/createClient")
     public Client createClient(@RequestBody Client client) {
         return this.clientService.createClient(client);
