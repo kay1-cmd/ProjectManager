@@ -10,6 +10,10 @@ public class clientService implements clientInterface {
     @Override
     public Client createClient(Client client){
         Client newClient = new Client();
+        newClient.setClientEmail(client.getClientEmail());
+        newClient.setClientName(client.getClientName());
+        newClient.setClientPass(client.getClientPass());
+        newClient.setClientNumber(client.getClientNumber());
         return newClient;
     }
 
