@@ -7,6 +7,9 @@ public class Project {
     private String description;
     private String criteria;
     
+    Project(String name){
+        this.name = name;
+    }
 
     public void setName(String n){
         this.name = n;
