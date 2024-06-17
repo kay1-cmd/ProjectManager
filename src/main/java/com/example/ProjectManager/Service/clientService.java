@@ -18,17 +18,22 @@ public class clientService implements clientInterface {
     }
 
     @Override
-    public Project createProject(){
+    public Project createProject(Project project){
+        Project newProject = new Project();
+        newProject.setName(project.getName());
+        newProject.setDueDate(project.getDueDate());
+        newProject.setClientCriteria(project.getClientCriteria());
+        newProject.setDescription(project.getDescription());
+        return newProject;
+    }
+
+    @Override
+    public Client getClient(String clientID){ //Needs implementation
         return null;
     }
 
     @Override
-    public Client getClient(){
-        return null;
-    }
-
-    @Override
-    public Project getProject(){
+    public Project getProject(String name){
         return null;
     }
 }
