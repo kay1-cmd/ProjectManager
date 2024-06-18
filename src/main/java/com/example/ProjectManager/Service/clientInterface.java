@@ -6,8 +6,8 @@ import com.example.ProjectManager.model.Project;
 public interface clientInterface {
 
     Client createClient(Client client);
-    Client getClient();
-    CLient createProject();
-    Client getProject();
+    Client getClient(String clientID);
+    Project createProject(Project project);
+    Project getProject(String name);
 
 }
