@@ -59,7 +59,7 @@ public class Client {
 
     /*  Creates a new project object. 
         Collects project name, uses to create a new project and fills
-        name field in Project onject with String n.
+        name field in Project onject with String projectName.
         Adds it to list of projects for this client.
     */
     public void createNewProject(String projectName){
