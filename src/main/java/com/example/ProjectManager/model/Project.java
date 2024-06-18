@@ -38,4 +38,9 @@ public class Project {
         return criteria;
     }
 
+    public String getSummary(){
+        String str = name + " " + date + " "+ description + " " + criteria ;
+        return str;
+    }
+
 }

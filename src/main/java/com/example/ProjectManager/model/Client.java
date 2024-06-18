@@ -7,7 +7,7 @@ import java.util.*;
 
 @Getter
 @Setter
-@NoArgsConstructor
+
 
 public class Client {
     private String clientID;
@@ -16,6 +16,14 @@ public class Client {
     private String clientEmail;
     private String clientNumber;
     private Map<String, Project> projectList;
+
+    Client(){}
+
+    Client(String name, String id, String pwd){
+        this.clientName = name;
+        this.clientID = id;
+        this.clientPass = pwd;
+    }
 
     public void setID(String ID){
         this.clientID = ID;
@@ -51,7 +59,7 @@ public class Client {
     }
 
     public void Number(String num){
-        this.clientNumber;
+        this.clientNumber = num;
     }
     public String Number(){ 
         return clientNumber;
