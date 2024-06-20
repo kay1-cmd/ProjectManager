@@ -17,6 +17,9 @@ public class clientService implements clientInterface {
         return newClient;
     }
 
+    /* Creates a project Object. At instantion, sets all fields. 
+     * Return Object, to be used in addProject Method.
+    */
     @Override
     public Project createProject(Project project){
         Project newProject = new Project();
@@ -26,7 +29,21 @@ public class clientService implements clientInterface {
         newProject.setDescription(project.getDescription());
         return newProject;
     }
+    /*  Add 
+        Collects project name, uses to create a new project and fills
+        name field in Project onject with String projectName.
+        Adds it to list of projects for this client.
 
+        We need to figure out how to get List acceess in this function.
+    */
+    public void addProject(Client c,Project p){
+        c.projectList.put(projectName, projectObject);
+
+    }
+
+    public Project getProject(String retrievalName){
+        return projectList.get(retrievalName);
+     }
     @Override
     public Client getClient(String clientID){ //Needs implementation
         return null;

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/freelance")
 public class freelanceController {
 
+    
     @Autowired
     private clientInterface clientService;
 

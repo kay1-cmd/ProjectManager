@@ -1,5 +1,12 @@
 package com.example.ProjectManager.model;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.NoArgsConstructor;
+@Getter
+@Setter
+
+@NoArgsConstructor
 public class Project {
     
     private String name;
@@ -7,36 +14,7 @@ public class Project {
     private String description;
     private String criteria;
     
-    Project(String name){
-        this.name = name;
-    }
 
-    public void setName(String n){
-        this.name = n;
-    }
-
-    public String getName(){
-        return name;
-    }
-
-    public void setDueDate(String d){
-        this.date = d;
-    }
-    public String getDueDate(){
-        return date;
-    }
-    public void setDescription(String descr){
-        this.description = descr;
-    }
-    public String getDescription(){
-        return description;
-    }
-    public void setClientCriteria(String crit){
-        this.criteria = crit;
-    }
-    public String getClientCriteria(){
-        return criteria;
-    }
 
     public String getSummary(){
         String str = name + " " + date + " "+ description + " " + criteria ;
