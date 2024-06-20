@@ -17,53 +17,7 @@ public class Client {
     private String clientNumber;
     private Map<String, Project> projectList;
 
-    Client(){}
-
-    Client(String name, String id, String pwd){
-        this.clientName = name;
-        this.clientID = id;
-        this.clientPass = pwd;
-    }
-
-    public void setID(String ID){
-        this.clientID = ID;
-    }
-    public String getID(){
-
-        return clientID;
-     }
-
-    public void setPass(String pass){
-        this.clientPass = pass;
-    }
-    public String getPass(){
-
-        return clientPass;
-    }
-
-    public void setName(String n){
-
-        this.clientName = n;
-
-    }
-    public String getName(){ 
-
-        return clientName;
-    }
-
-    public void setEmail(String email){
-        this.clientEmail = email;
-    }
-    public String getEmail(){ 
-        return clientEmail;
-    }
-
-    public void Number(String num){
-        this.clientNumber = num;
-    }
-    public String Number(){ 
-        return clientNumber;
-    }
+    
 
     /*  Creates a new project object. 
         Collects project name, uses to create a new project and fills
