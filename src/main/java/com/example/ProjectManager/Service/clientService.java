@@ -4,11 +4,14 @@ import com.example.ProjectManager.model.Client;
 import com.example.ProjectManager.model.Project;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class clientService implements clientInterface {
 
     @Override
-    public Client createClient(Client client){
+    public Client createClient(Client client) {
         Client newClient = new Client();
         newClient.setClientEmail(client.getClientEmail());
         newClient.setClientName(client.getClientName());
@@ -17,28 +20,31 @@ public class clientService implements clientInterface {
         return newClient;
     }
 
-    /* Creates a project Object. At instantion, sets all fields. 
-     * Return Object, to be used in addProject Method.
-    */
     @Override
-    public Project createProject(Project project){
-        Project newProject = new Project();
-        newProject.setName(project.getName());
-        newProject.setDate(project.getDate());
-        newProject.setCriteria(project.getCriteria());
-        newProject.setDescription(project.getDescription());
-        return newProject;
-    }
-    @Override
-    public Client getClient(String clientID){ //Needs implementation
+    public Client getClient(String clientID) { //Needs implementation
         return null;
     }
 
     @Override
-    public Project getProject(String name){
-        return null;
+    public List<Client> getListOfClients() {
+        List<Client> newList = new ArrayList<>();
+        return newList;
     }
 }
+
+
+
+
+
+
+
+//With more time will come back
+
+//    @Override
+//    public Project getProject(String name){
+//        return null;
+//    }
+//}
 
     /*  Add 
         Collects project name, uses to create a new project and fills
@@ -54,3 +60,15 @@ public class clientService implements clientInterface {
 //    public Project getProject(String retrievalName){
 //        return projectList.get(retrievalName);
 //     }
+/* Creates a project Object. At instantion, sets all fields.
+ * Return Object, to be used in addProject Method.
+ */
+//    @Override
+//    public Project createProject(Project project){
+//        Project newProject = new Project();
+//        newProject.setName(project.getName());
+//        newProject.setDate(project.getDate());
+//        newProject.setCriteria(project.getCriteria());
+//        newProject.setDescription(project.getDescription());
+//        return newProject;
+//    }

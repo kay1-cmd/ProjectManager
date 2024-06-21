@@ -6,11 +6,13 @@ import com.example.ProjectManager.model.Project;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
+import java.util.List;
+
 @RestController
 @RequestMapping("/freelance")
 public class freelanceController {
 
-    
     @Autowired
     private clientInterface clientService;
 
@@ -25,12 +27,6 @@ public class freelanceController {
         return this.clientService.createClient(client);
     }
 
-    //Post API Call to create a project
-    @PostMapping("/createProject")
-    public Project createProject(@RequestBody Project project) {
-        return this.clientService.createProject(project);
-    }
-
     //Get API Call to return a client by clientID
     @GetMapping("/getClient/{clientID}")
     public Client getClient(@PathVariable String clientID) {
@@ -38,9 +34,9 @@ public class freelanceController {
     }
 
     //Get API Call to return a project by its name
-    @GetMapping("/getProject/{name}")
-    public Project getProject(@PathVariable String name) {
-        return this.clientService.getProject(name);
+    @GetMapping("/listClients")
+    public List<Client> getProject() {
+        return this.clientService.getListOfClients();
     }
 
 }

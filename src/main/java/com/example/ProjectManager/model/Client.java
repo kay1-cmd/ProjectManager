@@ -14,5 +14,5 @@ public class Client {
     private String clientName;
     private String clientEmail;
     private String clientNumber;
-    private Map<String, Project> projectList;
+    //private Map<String, Project> projectList;
 }
