@@ -33,13 +33,13 @@ public class freelanceController {
 
     //Get API Call to return a client by clientID
     @GetMapping("/getClient/{clientID}")
-    public Client getClient(@RequestBody String clientID) {
+    public Client getClient(@PathVariable String clientID) {
         return this.clientService.getClient(clientID);
     }
 
     //Get API Call to return a project by its name
     @GetMapping("/getProject/{name}")
-    public Project getProject(@RequestBody String name) {
+    public Project getProject(@PathVariable String name) {
         return this.clientService.getProject(name);
     }
 

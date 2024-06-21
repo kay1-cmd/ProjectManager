@@ -8,17 +8,13 @@ import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 public class Project {
-    
     private String name;
     private String date;
     private String description;
     private String criteria;
-    
-
 
     public String getSummary(){
         String str = name + " " + date + " "+ description + " " + criteria ;
         return str;
     }
-
 }

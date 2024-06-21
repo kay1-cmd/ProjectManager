@@ -7,8 +7,7 @@ import java.util.*;
 
 @Getter
 @Setter
-
-
+@NoArgsConstructor
 public class Client {
     private String clientID;
     private String clientPass;
@@ -16,10 +15,4 @@ public class Client {
     private String clientEmail;
     private String clientNumber;
     private Map<String, Project> projectList;
-
-    
-
-    
-
-
 }

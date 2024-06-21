@@ -24,26 +24,11 @@ public class clientService implements clientInterface {
     public Project createProject(Project project){
         Project newProject = new Project();
         newProject.setName(project.getName());
-        newProject.setDueDate(project.getDueDate());
-        newProject.setClientCriteria(project.getClientCriteria());
+        newProject.setDate(project.getDate());
+        newProject.setCriteria(project.getCriteria());
         newProject.setDescription(project.getDescription());
         return newProject;
     }
-    /*  Add 
-        Collects project name, uses to create a new project and fills
-        name field in Project onject with String projectName.
-        Adds it to list of projects for this client.
-
-        We need to figure out how to get List acceess in this function.
-    */
-    public void addProject(Client c,Project p){
-        c.projectList.put(projectName, projectObject);
-
-    }
-
-    public Project getProject(String retrievalName){
-        return projectList.get(retrievalName);
-     }
     @Override
     public Client getClient(String clientID){ //Needs implementation
         return null;
@@ -54,3 +39,18 @@ public class clientService implements clientInterface {
         return null;
     }
 }
+
+    /*  Add 
+        Collects project name, uses to create a new project and fills
+        name field in Project onject with String projectName.
+        Adds it to list of projects for this client.
+
+        We need to figure out how to get List acceess in this function.
+    */
+//    public void addProject(Client c,Project p){
+//        c.projectList.put(projectName, projectObject);
+//    }
+
+//    public Project getProject(String retrievalName){
+//        return projectList.get(retrievalName);
+//     }
