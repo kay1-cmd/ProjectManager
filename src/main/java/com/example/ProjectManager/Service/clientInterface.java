@@ -12,5 +12,4 @@ public interface clientInterface {
     List<Client> getListOfClients();
     //Project createProject(Project project);
     //Project getProject(String name);
-
 }

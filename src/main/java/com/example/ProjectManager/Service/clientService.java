@@ -6,36 +6,40 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class clientService implements clientInterface {
 
+    private final List<Client> clients = new ArrayList<>();
+
     @Override
     public Client createClient(Client client) {
         Client newClient = new Client();
+        newClient.setClientID(client.getClientID());
         newClient.setClientEmail(client.getClientEmail());
         newClient.setClientName(client.getClientName());
         newClient.setClientPass(client.getClientPass());
         newClient.setClientNumber(client.getClientNumber());
+        this.clients.add(newClient);
         return newClient;
     }
 
     @Override
-    public Client getClient(String clientID) { //Needs implementation
+    public Client getClient(String clientID) {
+        for (Client client : clients) {
+            if (client.getClientID().equals(clientID)) {
+                return client;
+            }
+        }
         return null;
     }
 
     @Override
     public List<Client> getListOfClients() {
-        List<Client> newList = new ArrayList<>();
-        return newList;
+        return clients;
     }
 }
-
-
-
-
-
 
 
 //With more time will come back
