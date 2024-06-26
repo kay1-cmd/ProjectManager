@@ -29,6 +29,7 @@ function fetchClient(){
     });
 }
 
+
 //Fetch and display client list
 function fetchClientList(){
     fetch('http://localhost:8080/freelance/listClients',{
@@ -47,15 +48,22 @@ function fetchClientList(){
         });
 
     })
+    .catch(error => {
+        console.error('Error fetching clients:', error);
+    });
 }
+
 
 
 
 //Event listener for creating a new client
 newFactButton.addEventListener('click',createClient);
 
-//Event listener for displaying a client
-newFactButton.addEventListener('click',fetchClient);
 
 //Event listener for client list button
 newFactButton.addEventListener('click', fetchClientList);
+
+
+
+//Event listener for displaying a client
+//newFactButton.addEventListener('click',fetchClient);
