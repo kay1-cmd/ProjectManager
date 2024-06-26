@@ -16,7 +16,7 @@ public class clientService implements clientInterface {
     @Override
     public Client createClient(Client client) {
         Client newClient = new Client();
-        newClient.setClientID(client.getClientID());
+        newClient.setClientID(UUID.randomUUID().toString());
         newClient.setClientEmail(client.getClientEmail());
         newClient.setClientName(client.getClientName());
         newClient.setClientPass(client.getClientPass());
@@ -38,6 +38,31 @@ public class clientService implements clientInterface {
     @Override
     public List<Client> getListOfClients() {
         return clients;
+    }
+
+    @Override
+    public List<Client> deleteClient(String clientID){
+        for (Client client : clients) {
+            if (client.getClientID().equals(clientID)) {
+                clients.remove(client);
+            }
+            return clients;
+        }
+        return null;
+    }
+
+    @Override
+    public Client modifyClient(String clientID, Client clientInput){
+        for (Client client : clients){
+            if (client.getClientID().equals(clientID)) {
+                client.setClientEmail(clientInput.getClientEmail());
+                client.setClientName(clientInput.getClientName());
+                client.setClientPass(clientInput.getClientPass());
+                client.setClientNumber(clientInput.getClientNumber());
+            }
+            return client;
+        }
+        return null;
     }
 }
 
