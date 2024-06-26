@@ -1,3 +1,9 @@
+
+let displayClientElement = document.getElementById("display-client");
+let clientList = document.getElementById("client-list");
+let newClientButton = document,getElementById("new-client-button");
+
+
 //Create a new client
 function createClient(){
     fetch('http://localhost:8080/freelance/createClient',{
@@ -29,16 +35,17 @@ function fetchClientList(){
         method:'GET'
     })
     .then(response => response.json())
-    .then(client =>{
+    .then(clients =>{
 
         //Clear any existing items
         clientList.innerHTML ='';
 
-        client.forEach(client =>{
+        clients.forEach(client =>{
             const li = document.createElement('li');
             li.textContent = client.name;
             clientList.appendChild(li);
         });
+
     })
 }
 
