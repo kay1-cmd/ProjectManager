@@ -56,8 +56,6 @@ function fetchClientList(){
 
 
 
-//Event listener for creating a new client
-newFactButton.addEventListener('click',createClient);
 
 
 //Event listener for client list button
