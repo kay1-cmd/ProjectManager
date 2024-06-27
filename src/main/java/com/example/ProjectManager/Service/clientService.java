@@ -45,8 +45,8 @@ public class clientService implements clientInterface {
         for (Client client : clients) {
             if (client.getClientID().equals(clientID)) {
                 clients.remove(client);
+                return clients;
             }
-            return clients;
         }
         return null;
     }
