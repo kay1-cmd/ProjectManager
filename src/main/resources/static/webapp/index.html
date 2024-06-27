@@ -1,28 +1,43 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-            <meta name="viewport" content="wdth=device-width, initial-s">
-            <title>Dashboard</title>
-            <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <header>
-            <div id="toolbar">
-                <button id="new-client-button">Create Client</button>
-                <button id="client-list">Display All Clients</button>
-            </div>
-            
-        </header>
-        <main>
-            <section id="all-clients">
-                <h2>Complete Client List</h2>
-                <ul id="client-list">  
-                </ul>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <div id="toolbar">
+        <button id="new-client-button">Create Client</button>
+        <button id="client-list-button">Display All Clients</button>
+    </div>
+</header>
+<main>
+    <section id="all-clients">
+        <h2>Complete Client List</h2>
+        <ul id="client-list">
+        </ul>
+    </section>
+    <section id="client-form-section">
+        <h2>Create New Client</h2>
+        <form id="client-form">
+            <label for="client-email">Email:</label>
+            <input type="email" id="client-email" name="client-email" required><br>
 
-            </section>
+            <label for="client-name">Name:</label>
+            <input type="text" id="client-name" name="client-name" required><br>
 
-        </main>
-        <script src="script.js"></script>
-    </body>
+            <label for="client-password">Password:</label>
+            <input type="password" id="client-password" name="client-password" required><br>
+
+            <label for="client-number">Phone Number:</label>
+            <input type="tel" id="client-number" name="client-number" required><br>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+</main>
+<script src="script.js"></script>
+</body>
 </html>
