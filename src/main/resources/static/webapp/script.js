@@ -30,9 +30,9 @@ function createClient(){
 //Display a single client
 function fetchClient(clientID){
     fetch('http://localhost:8080/freelance/getClient/${clientID}',{
-        method:'GET'
+        method:'GET',
         headers:{
-        'Content-Type': 'application/json'}
+            'Content-Type': 'application/json'}
     })
     .then(response => response.json())
     .then(data =>{
