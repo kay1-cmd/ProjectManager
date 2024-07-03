@@ -36,6 +36,20 @@
             <button type="submit" onclick="createClient()">Submit</button>
         </form>
     </section>
+    <section id="client-search-section">
+        <h2>Search Client by ID</h2>
+        <form id="client-search-form">
+            <label for="client-id-search">Client ID:</label>
+            <input type="text" id="client-id-search" name="client-id-search" required><br>
+            <button type="button" onclick="searchClient()">Search</button>
+        </form>
+        <div id="client-details" style="display:none;">
+            <h3>Client Details</h3>
+            <p><strong>Email:</strong> <span id="client-email-detail"></span></p>
+            <p><strong>Name:</strong> <span id="client-name-detail"></span></p>
+            <p><strong>Phone Number:</strong> <span id="client-number-detail"></span></p>
+        </div>
+    </section>
 </main>
 <script src="script.js"></script>
 </body>
