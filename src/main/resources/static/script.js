@@ -29,7 +29,7 @@ function createClient(){
 
 //Display a single client
 function fetchClient(clientID){
-    fetch('http://localhost:8080/freelance/getClient/${clientID}',{
+    fetch('http://localhost:8080/freelance/getClient/{clientID}',{
         method:'GET',
         headers:{
             'Content-Type': 'application/json'}
