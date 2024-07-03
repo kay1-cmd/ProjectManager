@@ -16,7 +16,7 @@ function createClient(){
         headers:{
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ name: name, email: email, password: password, number, number})
+        body: JSON.stringify({ name: name, email: email, password: password, number: number})
         })
     .then(response => response.json())
     .then(data => {
@@ -28,16 +28,17 @@ function createClient(){
 }
 
 //Display a single client
-function fetchClient(){
-    fetch('http://localhost:8080/freelance/getClient/{clientID}',{
+function fetchClient(clientID){
+    fetch('http://localhost:8080/freelance/getClient/${clientID}',{
         method:'GET'
+        headers:{
+        'Content-Type': 'application/json'}
     })
     .then(response => response.json())
-    .then(client =>{
-
+    .then(data =>{
+        console.log("Success", data);
         //Update client paragraph/body
         displayClientElement.textContent = data.addEventListener
-  
     })
     .catch(error => {
         console.error('Error fetching client:', error);
