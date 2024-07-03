@@ -75,7 +75,7 @@ function fetchClientList(){
 
 
 //Event listener for client list button
-//newFactButton.addEventListener('submit', fetchClientList);
+newFactButton.addEventListener('submit', fetchClientList);
 
 
 
