@@ -1,11 +1,13 @@
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById("client-list-button").addEventListener('click', fetchClientList);
+    document.getElementById("client-form").addEventListener("submit", createClient);
+});
 
-let displayClientElement = document.getElementById("display-client");
 let clientList = document.getElementById("client-list");
 let newClientButton = document.getElementById("new-client-button");
 let clientEmailDetail = document.getElementById("client-email-detail");
 let clientNameDetail = document.getElementById("client-name-detail");
 let clientNumberDetail = document.getElementById("client-number-detail");
-
 
 //Create a new client
 function createClient(){
@@ -38,8 +40,10 @@ function createClient(){
         console.log("Success", data);
         var modal = document.getElementById("client-id-modal");
         var clientIdText = document.getElementById("client-id-text");
-        clientIdText.textContent = `Client ID: ${data.clientID}`;
+        clientIdText.textContent = `Client Created. Client ID: ${data.clientID}`;
         modal.style.display = "block";
+
+        document.getElementById("client-form").reset();
     })
     .catch(error => {
         console.error("Error:", error);
@@ -84,29 +88,36 @@ function fetchClientList(){
     .then(clients =>{
 
         //Clear any existing items
+        const clientList = document.getElementById('client-list');
         clientList.innerHTML ='';
 
-        clients.forEach(client =>{
-            const li = document.createElement('li');
-            li.textContent = client.name;
-            clientList.appendChild(li);
-        });
+         clients.forEach(client => {
+            const tr = document.createElement('tr');
+
+            const idTd = document.createElement('td');
+            idTd.textContent = client.clientID;
+            tr.appendChild(idTd);
+
+            const emailTd = document.createElement('td');
+            emailTd.textContent = client.clientEmail;
+            tr.appendChild(emailTd);
+
+            const nameTd = document.createElement('td');
+            nameTd.textContent = client.clientName;
+            tr.appendChild(nameTd);
+
+            const numberTd = document.createElement('td');
+            numberTd.textContent = client.clientNumber;
+            tr.appendChild(numberTd);
+
+            clientList.appendChild(tr);
+         });
 
     })
     .catch(error => {
         console.error('Error fetching clients:', error);
     });
+    document.addEventListener('DOMContentLoaded', () => {
+        fetchClientList();
+    });
 }
-
-document.getElementById("client-form").addEventListener("submit", createClient);
-
-
-
-
-//Event listener for client list button
-//newFactButton.addEventListener('submit', fetchClientList);
-
-
-
-//Event listener for displaying a client
-//newFactButton.addEventListener('click',fetchClient);
