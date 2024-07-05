@@ -1,42 +1,95 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<header>
-    <div id="toolbar">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!--<header>
+      <div id="toolbar">
         <button id="client-list-button">Display All Clients</button>
-    </div>
-</header>
-<main>
-    <section id="all-clients">
+      </div>
+    </header>-->
+    <main>
+      <section id="all-clients">
         <h2>Complete Client List</h2>
-        <ul id="client-list">
-        </ul>
-    </section>
-    <section id="client-form-section">
+        <div class="list-button-container">
+          <button class="client-list-button">Display All Clients</button>
+        </div>
+        <ul id="client-list"></ul>
+      </section>
+      <section id="client-form-section">
         <h2>Create New Client</h2>
         <form id="client-form">
-            <label for="client-email">Email:</label>
-            <input type="email" id="client-email" name="client-email" required><br>
+          <label for="client-email">Email:</label>
+          <input
+            type="email"
+            id="client-email"
+            name="client-email"
+            required
+          /><br />
 
-            <label for="client-name">Name:</label>
-            <input type="text" id="client-name" name="client-name" required><br>
+          <label for="client-name">Name:</label>
+          <input
+            type="text"
+            id="client-name"
+            name="client-name"
+            required
+          /><br />
 
-            <label for="client-password">Password:</label>
-            <input type="password" id="client-password" name="client-password" required><br>
+          <label for="client-password">Password:</label>
+          <input
+            type="password"
+            id="client-password"
+            name="client-password"
+            required
+          /><br />
 
-            <label for="client-number">Phone Number:</label>
-            <input type="tel" id="client-number" name="client-number" required><br>
-
+          <label for="client-number">Phone Number:</label>
+          <input
+            type="tel"
+            id="client-number"
+            name="client-number"
+            required
+          /><br />
+          <div class="submit-container">
             <button type="submit" onclick="createClient()">Submit</button>
+          </div>
         </form>
-    </section>
-</main>
-<script src="script.js"></script>
-</body>
+      </section>
+      <section id="client-search-section">
+        <h2>Search Client by ID</h2>
+        <form id="client-search-form">
+          <label for="client-id-search">Client ID:</label>
+          <input
+            type="text"
+            id="client-id-search"
+            name="client-id-search"
+            required
+          /><br />
+          <div class="submit-container">
+            <button type="button" onclick="searchClient()">Search</button>
+          </div>
+        </form>
+        <div id="client-details" style="display: none">
+          <h3>Client Details</h3>
+          <p><strong>Email:</strong> <span id="client-email-detail"></span></p>
+          <p><strong>Name:</strong> <span id="client-name-detail"></span></p>
+          <p>
+            <strong>Phone Number:</strong>
+            <span id="client-number-detail"></span>
+          </p>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
 </html>
