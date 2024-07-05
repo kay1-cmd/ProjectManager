@@ -2,25 +2,41 @@
 let displayClientElement = document.getElementById("display-client");
 let clientList = document.getElementById("client-list");
 let newClientButton = document.getElementById("new-client-button");
+let clientEmailDetail = document.getElementById("client-email-detail");
+let clientNameDetail = document.getElementById("client-name-detail");
+let clientNumberDetail = document.getElementById("client-number-detail");
 
 
 //Create a new client
 function createClient(){
+    event.preventDefault();
+
     var name = document.getElementById("client-name").value;
     var email = document.getElementById("client-email").value;
     var password = document.getElementById("client-password").value;
     var number = document.getElementById("client-number").value;
+
+    console.log("Name:", name);
+    console.log("Email:", email);
+    console.log("Password:", password);
+    console.log("Number:", number);
 
     fetch('http://localhost:8080/freelance/createClient',{
         method:'POST',
         headers:{
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ name: name, email: email, password: password, number: number})
+        body: JSON.stringify({
+            clientName: name,
+            clientEmail: email,
+            clientPass: password,
+            clientNumber: number
         })
+    })
     .then(response => response.json())
     .then(data => {
         console.log("Success", data);
+        alert("Client created successfully!");
     })
     .catch(error => {
         console.error("Error:", error);
@@ -29,7 +45,7 @@ function createClient(){
 
 //Display a single client
 function fetchClient(clientID){
-    fetch('http://localhost:8080/freelance/getClient/{clientID}',{
+    fetch(`http://localhost:8080/freelance/getClient/${clientID}`,{
         method:'GET',
         headers:{
             'Content-Type': 'application/json'}
@@ -37,8 +53,10 @@ function fetchClient(clientID){
     .then(response => response.json())
     .then(data =>{
         console.log("Success", data);
-        //Update client paragraph/body
-        displayClientElement.textContent = data.addEventListener
+        clientEmailDetail.textContent = data.clientEmail;
+        clientNameDetail.textContent = data.clientName;
+        clientNumberDetail.textContent = data.clientNumber;
+        document.getElementById("client-details").style.display = "block";
     })
     .catch(error => {
         console.error('Error fetching client:', error);
@@ -69,13 +87,13 @@ function fetchClientList(){
     });
 }
 
-
+document.getElementById("client-form").addEventListener("submit", createClient);
 
 
 
 
 //Event listener for client list button
-newFactButton.addEventListener('submit', fetchClientList);
+//newFactButton.addEventListener('submit', fetchClientList);
 
 
 

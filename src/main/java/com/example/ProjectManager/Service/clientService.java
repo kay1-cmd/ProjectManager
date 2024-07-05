@@ -21,6 +21,7 @@ public class clientService implements clientInterface {
         newClient.setClientName(client.getClientName());
         newClient.setClientPass(client.getClientPass());
         newClient.setClientNumber(client.getClientNumber());
+
         this.clients.add(newClient);
         return newClient;
     }

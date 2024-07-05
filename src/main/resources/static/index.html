@@ -33,7 +33,7 @@
             <label for="client-number">Phone Number:</label>
             <input type="tel" id="client-number" name="client-number" required><br>
 
-            <button type="submit" onclick="createClient()">Submit</button>
+            <button type="submit">Submit</button>
         </form>
     </section>
     <section id="client-search-section">
@@ -41,7 +41,7 @@
         <form id="client-search-form">
             <label for="client-id-search">Client ID:</label>
             <input type="text" id="client-id-search" name="client-id-search" required><br>
-            <button type="button" onclick="searchClient()">Search</button>
+            <button type="button" onclick="fetchClient(document.getElementById('client-id-search').value)">Search</button>
         </form>
         <div id="client-details" style="display:none;">
             <h3>Client Details</h3>
