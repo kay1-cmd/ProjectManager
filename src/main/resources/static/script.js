@@ -49,7 +49,9 @@ function fetchClient(clientID){
 //Fetch and display client list
 function fetchClientList(){
     fetch('http://localhost:8080/freelance/listClients',{
-        method:'GET'
+        method:'GET',
+        headers:{
+            'Content-Type': 'application/json'}
     })
     .then(response => response.json())
     .then(clients =>{
@@ -75,7 +77,7 @@ function fetchClientList(){
 
 
 //Event listener for client list button
-newFactButton.addEventListener('submit', fetchClientList);
+newClientButton.addEventListener('submit', fetchClientList);
 
 
 
