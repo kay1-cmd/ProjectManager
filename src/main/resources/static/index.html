@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dashboard</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- ADD THIS LINE TO REMOVE THE TABLE FROM THE INITIAL DISPLAY-->
+    <!--<style>
+        #all-clients {
+            display: none;
+        }
+    </style>-->
 </head>
 <body>
 <header>
@@ -15,8 +21,36 @@
 <main>
     <section id="all-clients">
         <h2>Complete Client List</h2>
-        <ul id="client-list">
-        </ul>
+        <table id="client-table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Email</th>
+                <th>Name</th>
+                <th>Phone Number</th>
+            </tr>
+            </thead>
+            <tbody id="client-list">
+            <tr>
+                <td>1</td>
+                <td>john.doe@example.com</td>
+                <td>John Doe</td>
+                <td>(123) 456-7890</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>jane.smith@example.com</td>
+                <td>Jane Smith</td>
+                <td>(987) 654-3210</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>alice.jones@example.com</td>
+                <td>Alice Jones</td>
+                <td>(555) 123-4567</td>
+            </tr>
+            </tbody>
+        </table>
     </section>
     <section id="client-form-section">
         <h2>Create New Client</h2>

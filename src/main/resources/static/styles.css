@@ -108,3 +108,32 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: #005bb5;
 }
+
+
+#client-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+#client-table th,
+#client-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  color: white;
+}
+
+#client-table th {
+  background-color: #3f4040;
+  color: white;
+}
+
+
+#client-table tr:hover {
+  background-color: #fff1b9;
+}
+
+#client-table tr:hover td {
+  color: #000;
+}
