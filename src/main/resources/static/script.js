@@ -36,11 +36,22 @@ function createClient(){
     .then(response => response.json())
     .then(data => {
         console.log("Success", data);
-        alert("Client created successfully!");
+        var modal = document.getElementById("client-id-modal");
+        var clientIdText = document.getElementById("client-id-text");
+        clientIdText.textContent = `Client ID: ${data.clientID}`;
+        modal.style.display = "block";
     })
     .catch(error => {
         console.error("Error:", error);
     })
+
+    var closeBtn = document.querySelector(".close");
+    if (closeBtn) {
+        closeBtn.addEventListener("click", function() {
+            var modal = document.getElementById("client-id-modal");
+            modal.style.display = "none";
+        });
+}
 }
 
 //Display a single client
